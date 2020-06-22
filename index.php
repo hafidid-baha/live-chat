@@ -44,7 +44,8 @@
                 // has been clicked the button
                 let data = {"user":username,"msg":message};
                 console.log(data);
-                // conn.send('Hello World!');
+                // send data
+                conn.send(data);
             }
         });
 
