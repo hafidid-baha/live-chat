@@ -13,12 +13,12 @@
             <div class="col-6 mx-auto mt-4">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Your Name</label>
-                    <input type="email" class="form-control" id="username" placeholder="username">
+                    <input type="email" class="form-control" value="" id="username">
                 </div>
 
                 <div class="form-group mx-auto mt-4">
                     <label for="exampleFormControlTextarea1">Your Message</label>
-                    <textarea class="form-control" id="message" rows="3"></textarea>
+                    <textarea class="form-control" value="" id="message" rows="3"></textarea>
                 </div>
 
                 <button class="btn btn-success" id="sendbtn">Send</button>
@@ -31,13 +31,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script>
     $("document").ready(function(){
-        let sendBtn = $('#sendbtn');
-        let username = $('#username').val();
-        let message = $('#message').val();
+        let sendBtn = $("#sendbtn");
+        // console.log(username);
         // add click event to send button
         sendBtn.on('click',function(){
-            if(username=='' || message==''){
-                
+
+            let username = $("#username").val();
+            let message = $("#message").val();
+
+            if(username != '' && message != ''){
+                // send some data whene the user 
+                // has been clicked the button
+                let data = {"user":username,"msg":message};
+                console.log(data);
+                // conn.send('Hello World!');
             }
         });
 
