@@ -34,11 +34,23 @@
         let sendBtn = $('#sendbtn');
         let username = $('#username').val();
         let message = $('#message').val();
+        // add click event to send button
         sendBtn.on('click',function(){
             if(username=='' || message==''){
-                alert('please enter all the information');
+                
             }
         });
+
+        // run new web socket to lisetn for 
+        // new Connection and messages
+        var conn = new WebSocket('ws://localhost:8080');
+        conn.onopen = function(e) {
+            console.log("Connection established!");
+        };
+
+        conn.onmessage = function(e) {
+            console.log(e.data);
+        };
     });
 </script>
 </body>
