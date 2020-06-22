@@ -43,9 +43,8 @@
                 // send some data whene the user 
                 // has been clicked the button
                 let data = {"user":username,"msg":message};
-                console.log(data);
                 // send data
-                conn.send(data);
+                conn.send(JSON.stringify(data));
             }
         });
 
@@ -57,7 +56,9 @@
         };
 
         conn.onmessage = function(e) {
-            console.log(e.data);
+            let info = JSON.parse(e.data);
+            console.log(info.user);
+            alert(info.user+" : said "+info.msg);
         };
     });
 </script>
