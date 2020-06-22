@@ -1,0 +1,12 @@
+{
+    "name": "evel25/socket",
+    "authors": [
+        {
+            "name": "Evel25",
+            "email": "hafidsoftdev@gmail.com"
+        }
+    ],
+    "require": {
+        "cboden/ratchet": "^0.4.2"
+    }
+}
