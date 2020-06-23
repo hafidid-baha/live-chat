@@ -33,14 +33,26 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script>
     $("document").ready(function(){
-        swal("Hello world!");
+        let username;        
+        let usernameInput = $("#username");        
         let sendBtn = $("#sendbtn");
-        // console.log(username);
+
+        // create alert to get username from the user
+        swal("Please Enter Your Name:", {
+            content: "input",
+        })
+        .then((value) => {
+            username = value;
+            usernameInput.val(username);
+            // swal(`You typed: ${username}`);
+        });
+
+        
         // add click event to send button
         sendBtn.on('click',function(){
-
-            let username = $("#username").val();
+            
             let message = $("#message").val();
+            // console.log(usernameInput.val());
 
             if(username != '' && message != ''){
                 // send some data whene the user 
