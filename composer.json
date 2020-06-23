@@ -6,6 +6,7 @@
             "email": "hafidsoftdev@gmail.com"
         }
     ],
+    "description": "this app created to learn how ratchet handles websockects in php",
     "require": {
         "cboden/ratchet": "^0.4.2"
     },
